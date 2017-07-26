@@ -64,8 +64,8 @@ case object Closed extends DoorState
 
 case class Pull() // <2>
 ----
-<1> Tất cả các State đều phải extends từ trait DoorState
-<2> Event phải được khai bác dưới dạng một case class
+<1>  .Tất cả các State đều phải extends từ trait DoorState
+<2>  .Event phải được khai bác dưới dạng một case class
 
 ==== Object & Class Door
 [source,scala]
@@ -115,7 +115,7 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { //
   }
 }
 ----
-<1> Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.
-<2> State và StateData mặc định khi Actor được khởi tạo.
-<3> forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.
-<4> Có thể override để FSM bắn ra thêm các sự kiện.
+<1> .Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.
+<2> .State và StateData mặc định khi Actor được khởi tạo.
+<3> .forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.
+<4> .Có thể override để FSM bắn ra thêm các sự kiện.
