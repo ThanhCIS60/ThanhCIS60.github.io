@@ -1,6 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. ]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 05:05:34 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[An awesome post will be here sooon. Thank you and keep being awesome :D!]]></title><link>https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</guid><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. ]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 06:16:35 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[An awesome post will be here sooon. Thank you and keep being awesome :D!]]></title><link>https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</guid><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_fsm_flying_spaghetti_monster">FSM != Flying Spaghetti Monster</h3>
 <div class="paragraph">
-<p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game</p>
+<p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.</p>
+</div>
+<div class="paragraph">
+<p>Có thể hiểu ý tưởng ngắn gọn về FSM là:</p>
+</div>
+<div class="paragraph">
+<p><code>State(S) ! Event(E) &#8594; State(S'), Action(A)</code></p>
+</div>
+<div class="paragraph">
+<p>Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều này dẫn đến trại thái chuyển về S' và thực hiện hành động A</p>
+</div>
+<div class="paragraph">
+<p>Pattern này khá phổ biến với Java (guide trên <a href="https://www.tutorialspoint.com/design_pattern/state_pattern.htm">TP</a>).</p>
+</div>
+<div class="paragraph">
+<p>Với Scala, Akka cũng đã tích hợp FSM từ những build rất sớm.</p>
+</div>
+<div class="paragraph">
+<p>Mục tiệu của bài viết là giới thiệu cho người đọc về FSM pattern cũng như một số cái "hay ho" của Scala (ngôn ngữ mình ghét ít thứ nhì sau C#).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ph_n_t_ch_v_thi_t_k">Phân tích và thiết kế</h3>
+<div class="paragraph">
+<p>Để đơn giản và dễ hình dung nhất. Chúng ta sẽ mô phỏng lại 1 cách cửa có khả năng tự đóng lại sau khi mở ra.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Liệt kê những trại thái có thể có.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Đóng (Closed)</p>
+</li>
+<li>
+<p>Mở (Opened)</p>
+<div class="literalblock">
+<div class="content">
+<pre>Phức tạp hơn, các bạn có thêm trạng thái Giữ lại (Held)</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dữ liệu được truyền giữa các trại thái (StateData)</p>
+<div class="literalblock">
+<div class="content">
+<pre>Well, với object là một cái cửa thì chúng ta không có nhiều lắm thông tin cần lưu trữ lại.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Ví dụ về StateData có thể áp dụng khi mà chúng ta muốn lập trình một cánh cửa có khả năng đưa ra số người trong phòng bằng cách đếm số người ra/vào chẳng hạn. Khi đó StateData sẽ là một số Int tăng giảm tuỳ vào Event.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Trong trường hợp này, mình sẽ lấy ví dụ với cách cửa có kèm theo bộ đếm số lần mở cửa. Con số này sẽ chỉ tăng mà không giảm đi.</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>]]></description><link>https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html</guid><category><![CDATA[Scala]]></category><category><![CDATA[Akka]]></category><category><![CDATA[Pattern]]></category><category><![CDATA[FSM]]></category><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item></channel></rss>

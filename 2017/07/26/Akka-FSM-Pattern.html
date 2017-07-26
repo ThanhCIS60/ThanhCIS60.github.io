@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://thanhphamvan.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/casper/assets/css/screen.css?v=1501045534824" />
+    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/casper/assets/css/screen.css?v=1501049795582" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html" />
@@ -21,20 +21,18 @@
     <meta property="og:site_name" content="Personal blog" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Akka FSM Pattern" />
-    <meta property="og:description" content="FSM !&#x3D; Flying Spaghetti Monster FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game" />
+    <meta property="og:description" content="FSM !&#x3D; Flying Spaghetti Monster FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game. Có thể hiểu ý tưởng ngắn gọn về FSM là: State(S) ! Event(E) &amp;#8594; State(S&#x27;), Action(A) Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều" />
     <meta property="og:url" content="https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html" />
-    <meta property="og:image" content="http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg" />
     <meta property="article:published_time" content="2017-07-26T00:00:00.000Z" />
     <meta property="article:tag" content="Scala" />
     <meta property="article:tag" content="Akka" />
     <meta property="article:tag" content="Pattern" />
     <meta property="article:tag" content="FSM" />
     
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Akka FSM Pattern" />
-    <meta name="twitter:description" content="FSM !&#x3D; Flying Spaghetti Monster FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game" />
+    <meta name="twitter:description" content="FSM !&#x3D; Flying Spaghetti Monster FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game. Có thể hiểu ý tưởng ngắn gọn về FSM là: State(S) ! Event(E) &amp;#8594; State(S&#x27;), Action(A) Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều" />
     <meta name="twitter:url" content="https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html" />
-    <meta name="twitter:image:src" content="http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg" />
     
     <script type="application/ld+json">
 {
@@ -52,9 +50,8 @@
     "headline": "Akka FSM Pattern",
     "url": "https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html",
     "datePublished": "2017-07-26T00:00:00.000Z",
-    "image": "http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg",
     "keywords": "Scala, Akka, Pattern, FSM",
-    "description": "FSM !&#x3D; Flying Spaghetti Monster FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game"
+    "description": "FSM !&#x3D; Flying Spaghetti Monster FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game. Có thể hiểu ý tưởng ngắn gọn về FSM là: State(S) ! Event(E) &amp;#8594; State(S&#x27;), Action(A) Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều"
 }
     </script>
 
@@ -71,8 +68,8 @@
         
 
 
-<header class="main-header post-head " style="background-image: url(http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg)">
-    <nav class="main-nav overlay clearfix">
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
         
     </nav>
 </header>
@@ -91,7 +88,71 @@
             <div class="sect2">
 <h3 id="_fsm_flying_spaghetti_monster">FSM != Flying Spaghetti Monster</h3>
 <div class="paragraph">
-<p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game</p>
+<p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.</p>
+</div>
+<div class="paragraph">
+<p>Có thể hiểu ý tưởng ngắn gọn về FSM là:</p>
+</div>
+<div class="paragraph">
+<p><code>State(S) ! Event(E) &#8594; State(S'), Action(A)</code></p>
+</div>
+<div class="paragraph">
+<p>Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều này dẫn đến trại thái chuyển về S' và thực hiện hành động A</p>
+</div>
+<div class="paragraph">
+<p>Pattern này khá phổ biến với Java (guide trên <a href="https://www.tutorialspoint.com/design_pattern/state_pattern.htm">TP</a>).</p>
+</div>
+<div class="paragraph">
+<p>Với Scala, Akka cũng đã tích hợp FSM từ những build rất sớm.</p>
+</div>
+<div class="paragraph">
+<p>Mục tiệu của bài viết là giới thiệu cho người đọc về FSM pattern cũng như một số cái "hay ho" của Scala (ngôn ngữ mình ghét ít thứ nhì sau C#).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ph_n_t_ch_v_thi_t_k">Phân tích và thiết kế</h3>
+<div class="paragraph">
+<p>Để đơn giản và dễ hình dung nhất. Chúng ta sẽ mô phỏng lại 1 cách cửa có khả năng tự đóng lại sau khi mở ra.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Liệt kê những trại thái có thể có.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Đóng (Closed)</p>
+</li>
+<li>
+<p>Mở (Opened)</p>
+<div class="literalblock">
+<div class="content">
+<pre>Phức tạp hơn, các bạn có thêm trạng thái Giữ lại (Held)</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dữ liệu được truyền giữa các trại thái (StateData)</p>
+<div class="literalblock">
+<div class="content">
+<pre>Well, với object là một cái cửa thì chúng ta không có nhiều lắm thông tin cần lưu trữ lại.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Ví dụ về StateData có thể áp dụng khi mà chúng ta muốn lập trình một cánh cửa có khả năng đưa ra số người trong phòng bằng cách đếm số người ra/vào chẳng hạn. Khi đó StateData sẽ là một số Int tăng giảm tuỳ vào Event.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Trong trường hợp này, mình sẽ lấy ví dụ với cách cửa có kèm theo bộ đếm số lần mở cửa. Con số này sẽ chỉ tăng mà không giảm đi.</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
         </section>
@@ -165,8 +226,8 @@
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1501045534824"></script>
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/index.js?v=1501045534824"></script>
+    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1501049795582"></script>
+    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/index.js?v=1501049795582"></script>
 
 </body>
 </html>
