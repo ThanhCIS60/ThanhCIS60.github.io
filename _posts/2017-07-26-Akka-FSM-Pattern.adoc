@@ -1,10 +1,42 @@
 = Akka FSM Pattern
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
-:hp-image: http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg
+// :hp-image: http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg
 // :published_at: 2019-01-31
 :hp-tags: Scala, Akka, Pattern, FSM
 // :hp-alt-title: My English Title
 
 === FSM != Flying Spaghetti Monster
 
-FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game
+FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.
+
+Có thể hiểu ý tưởng ngắn gọn về FSM là:
+
+`State(S) ! Event(E) -> State(S'), Action(A)`
+
+Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều này dẫn đến trại thái chuyển về S' và thực hiện hành động A
+
+Pattern này khá phổ biến với Java (guide trên https://www.tutorialspoint.com/design_pattern/state_pattern.htm[TP]).
+
+Với Scala, Akka cũng đã tích hợp FSM từ những build rất sớm.
+
+Mục tiệu của bài viết là giới thiệu cho người đọc về FSM pattern cũng như một số cái "hay ho" của Scala (ngôn ngữ mình ghét ít thứ nhì sau C#).
+
+=== Phân tích và thiết kế
+
+Để đơn giản và dễ hình dung nhất. Chúng ta sẽ mô phỏng lại 1 cách cửa có khả năng tự đóng lại sau khi mở ra.
+
+1. Liệt kê những trại thái có thể có.
+
+* Đóng (Closed)
+* Mở (Opened)
+
+	Phức tạp hơn, các bạn có thêm trạng thái Giữ lại (Held)
+
+2. Dữ liệu được truyền giữa các trại thái (StateData)
+
+	Well, với object là một cái cửa thì chúng ta không có nhiều lắm thông tin cần lưu trữ lại.
+
+	Ví dụ về StateData có thể áp dụng khi mà chúng ta muốn lập trình một cánh cửa có khả năng đưa ra số người trong phòng bằng cách đếm số người ra/vào chẳng hạn. Khi đó StateData sẽ là một số Int tăng giảm tuỳ vào Event.
+
+	Trong trường hợp này, mình sẽ lấy ví dụ với cách cửa có kèm theo bộ đếm số lần mở cửa. Con số này sẽ chỉ tăng mà không giảm đi.
+
