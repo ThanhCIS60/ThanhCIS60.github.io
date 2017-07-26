@@ -11,8 +11,8 @@
     <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="//thanhphamvan.github.io/themes/saga/assets/css/style.css?v=1501060136140" rel="stylesheet" type="text/css">
-    <link href="//thanhphamvan.github.io/themes/saga/assets/css/animate.min.css?v=1501060136140" rel="stylesheet" type="text/css">
+    <link href="//thanhphamvan.github.io/themes/saga/assets/css/style.css?v=1501060450201" rel="stylesheet" type="text/css">
+    <link href="//thanhphamvan.github.io/themes/saga/assets/css/animate.min.css?v=1501060450201" rel="stylesheet" type="text/css">
     <link href="https://thanhphamvan.github.io/favicon.ico" rel="shortcut icon">
     <link rel="canonical" href="https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html" />
     <meta name="referrer" content="origin" />
@@ -182,11 +182,11 @@ case class Pull() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>.Tất cả các State đều phải extends từ trait DoorState</td>
+<td>. Tất cả các State đều phải extends từ trait DoorState</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>.Event phải được khai bác dưới dạng một case class</td>
+<td>. Event phải được khai bác dưới dạng một case class</td>
 </tr>
 </table>
 </div>
@@ -245,19 +245,19 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { <i
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>.Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.</td>
+<td>. Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>.State và StateData mặc định khi Actor được khởi tạo.</td>
+<td>. State và StateData mặc định khi Actor được khởi tạo.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>.forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.</td>
+<td>. forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>.Có thể override để FSM bắn ra thêm các sự kiện.</td>
+<td>. Có thể override để FSM bắn ra thêm các sự kiện.</td>
 </tr>
 </table>
 </div>
@@ -294,7 +294,7 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { <i
       </script>
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-    <script src="//thanhphamvan.github.io/themes/saga/assets/js/scripts.js?v=1501060136140"></script>
+    <script src="//thanhphamvan.github.io/themes/saga/assets/js/scripts.js?v=1501060450201"></script>
     
 </body>
 </html>
