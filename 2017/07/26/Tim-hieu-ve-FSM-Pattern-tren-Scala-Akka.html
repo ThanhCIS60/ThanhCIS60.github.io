@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://thanhphamvan.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/casper/assets/css/screen.css?v=1501057807077" />
+    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/casper/assets/css/screen.css?v=1501058491697" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html" />
@@ -194,6 +194,54 @@ case class Pull() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </tr>
 </table>
 </div>
+<div class="listingblock">
+<div class="title">Door.scala</div>
+<div class="content">
+<pre class="highlight"><code class="language-scala" data-lang="scala">object Door {
+
+  import scala.concurrent.ExecutionContext.Implicits.global
+  import scala.concurrent.duration._
+
+  val system = ActorSystem("door-system")
+
+  def start(duration: FiniteDuration): ActorRef =
+    system.actorOf(Props(new Door(duration)))
+
+  def start(duration: Long): ActorRef =
+    system.actorOf(Props(new Door(duration.milliseconds)))
+
+  def stop(ref: ActorRef): Unit = system.stop(ref)
+
+  def shutdown(): Unit = system.terminate().map(
+    _ =&gt; println("Door-System is terminated!")
+  )
+
+  def pull(ref: ActorRef): Unit = {
+    ref ! Pull()
+  }
+}
+
+class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
+  startWith(Closed, 0)
+
+  when(Closed) {
+    case Event(Pull(), counter) =&gt;
+      goto(Opened) using (counter + 1) forMax duration
+  }
+
+  when(Opened) {
+    case Event(StateTimeout, _) =&gt; goto(Closed)
+  }
+
+  onTransition {
+    case Closed -&gt; Opened =&gt;
+      log.info("The door is opened!")
+    case Opened -&gt; Closed =&gt;
+      log.info("The door is closed!")
+  }
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -268,8 +316,8 @@ case class Pull() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1501057807077"></script>
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/index.js?v=1501057807077"></script>
+    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1501058491697"></script>
+    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/index.js?v=1501058491697"></script>
 
 </body>
 </html>
