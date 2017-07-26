@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 09:07:14 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 09:08:56 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.<br>
@@ -98,11 +98,11 @@ case class Pull() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Tất cả các State đều phải extends từ trait DoorState</td>
+<td>.Tất cả các State đều phải extends từ trait DoorState</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Event phải được khai bác dưới dạng một case class</td>
+<td>.Event phải được khai bác dưới dạng một case class</td>
 </tr>
 </table>
 </div>
@@ -161,19 +161,19 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { <i
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.</td>
+<td>.Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>State và StateData mặc định khi Actor được khởi tạo.</td>
+<td>.State và StateData mặc định khi Actor được khởi tạo.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.</td>
+<td>.forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Có thể override để FSM bắn ra thêm các sự kiện.</td>
+<td>.Có thể override để FSM bắn ra thêm các sự kiện.</td>
 </tr>
 </table>
 </div>
