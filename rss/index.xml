@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. ]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 08:44:15 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. ]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 08:46:02 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_fsm_flying_spaghetti_monster">FSM != Flying Spaghetti Monster</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -103,14 +103,17 @@ case class Pull() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Event phải được khai bác dưới dạng một case class, có thể nhận thêm parameter hoặc chứa các function
-==== Object &amp; Class Door</td>
+<td>Event phải được khai bác dưới dạng một case class, có thể nhận thêm parameter hoặc chứa các function</td>
 </tr>
 </table>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_object_class_door">Object &amp; Class Door</h4>
 <div class="listingblock">
+<div class="title">Door.scala</div>
 <div class="content">
-<pre>object Door {
+<pre class="highlight"><code class="language-scala" data-lang="scala">object Door {
 
   import scala.concurrent.ExecutionContext.Implicits.global
   import scala.concurrent.duration._
@@ -152,7 +155,7 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
     case Opened -&gt; Closed =&gt;
       log.info("The door is closed!")
   }
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
