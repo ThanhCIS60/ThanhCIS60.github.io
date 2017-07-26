@@ -25,15 +25,25 @@ Mục tiệu của bài viết là giới thiệu cho người đọc về FSM p
 
 Để đơn giản và dễ hình dung nhất. Chúng ta sẽ mô phỏng lại 1 cách cửa có khả năng tự đóng lại sau khi mở ra.
 
-. Liệt kê những trại thái có thể có. +
+==== 1. Liệt kê những trại thái có thể có.
 * Đóng (Closed)
-* Mở (Opened) 
-+
+* Mở (Opened)
+
 Phức tạp hơn, các bạn có thêm trạng thái Giữ lại (Held)
 
-. Dữ liệu được truyền giữa các trại thái (StateData)
+==== 2. Dữ liệu được truyền giữa các trại thái (StateData)
 
 Well, với object là một cái cửa thì chúng ta không có nhiều lắm thông tin cần lưu trữ lại. +
 Ví dụ về StateData có thể áp dụng khi mà chúng ta muốn lập trình một cánh cửa có khả năng đưa ra số người trong phòng bằng cách đếm số người ra/vào chẳng hạn. Khi đó StateData sẽ là một số Int tăng giảm tuỳ vào Event. +
 Trong trường hợp này, mình sẽ lấy ví dụ với cách cửa có kèm theo bộ đếm số lần mở cửa. Con số này sẽ chỉ tăng mà không giảm đi.
+
+==== 3. Ứng với từng trạng thái, liệt kê các event có thể có
+Với trạng thái Đóng (Closed), chúng ta sẽ có event Push()
+Với trạng thái Mở (Opened), chúng ta sẽ có event StateTimeOut()
+
+==== 4. Ứng với từng event, liệt kê các thay đổi về trạng thái và dữ liệu truyền giữa các trạng thái
+Chúng ta có: +
+`State(Closed) ! Push() -> State(Opened), ++Counter` +
+`State(Opened) ! StateTimeOut() -> State(Closed)`
+
 
