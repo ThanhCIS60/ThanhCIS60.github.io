@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://thanhphamvan.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/casper/assets/css/screen.css?v=1501058491697" />
+    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/casper/assets/css/screen.css?v=1501058655088" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html" />
@@ -186,18 +186,18 @@ case class Pull() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Tất cả các State đều phải extends từ trait DoorState</td>
+<td>Tất cả các State đều phải extends từ trait DoorState<br></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Event phải được khai bác dưới dạng một case class, có thể nhận thêm parameter hoặc chứa các function</td>
+<td>Event phải được khai bác dưới dạng một case class, có thể nhận thêm parameter hoặc chứa các function
+==== Object &amp; Class Door</td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Door.scala</div>
 <div class="content">
-<pre class="highlight"><code class="language-scala" data-lang="scala">object Door {
+<pre>object Door {
 
   import scala.concurrent.ExecutionContext.Implicits.global
   import scala.concurrent.duration._
@@ -239,7 +239,7 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
     case Opened -&gt; Closed =&gt;
       log.info("The door is closed!")
   }
-}</code></pre>
+}</pre>
 </div>
 </div>
 </div>
@@ -316,8 +316,8 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1501058491697"></script>
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/index.js?v=1501058491697"></script>
+    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1501058655088"></script>
+    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/index.js?v=1501058655088"></script>
 
 </body>
 </html>
