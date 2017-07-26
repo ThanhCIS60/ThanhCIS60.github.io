@@ -5,8 +5,6 @@
 :hp-tags: Scala, Akka, Pattern, FSM
 :hp-alt-title: Tìm hiểu về FSM Pattern trên Scala Akka
 
-== FSM != Flying Spaghetti Monster
-
 FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game. +
 Có thể hiểu ý tưởng ngắn gọn về FSM là: +
 `State(S) ! Event(E) -> State(S'), Action(A)`
