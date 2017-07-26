@@ -95,12 +95,12 @@ object Door {
   }
 }
 
-class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
-  startWith(Closed, 0)
+class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { // <1>
+  startWith(Closed, 0) // <2>
 
   when(Closed) {
     case Event(Pull(), counter) =>
-      goto(Opened) using (counter + 1) forMax duration
+      goto(Opened) using (counter + 1) forMax duration // <3>
   }
 
   when(Opened) {
@@ -108,11 +108,14 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
   }
 
   onTransition {
-    case Closed -> Opened =>
+    case Closed -> Opened => // <4>
       log.info("The door is opened!")
     case Opened -> Closed =>
       log.info("The door is closed!")
   }
 }
 ----
-
+<1> Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.
+<2> State và StateData mặc định khi Actor được khởi tạo.
+<3> forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.
+<4> Có thể override để FSM bắn ra thêm các sự kiện.
