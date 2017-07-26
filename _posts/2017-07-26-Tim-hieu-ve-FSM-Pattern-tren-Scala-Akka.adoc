@@ -69,3 +69,51 @@ case class Pull() // <2>
 <1> Tất cả các State đều phải extends từ trait DoorState
 <2> Event phải được khai bác dưới dạng một case class, có thể nhận thêm parameter hoặc chứa các function
 
+[source,scala]
+.Door.scala
+----
+object Door {
+
+  import scala.concurrent.ExecutionContext.Implicits.global
+  import scala.concurrent.duration._
+
+  val system = ActorSystem("door-system")
+
+  def start(duration: FiniteDuration): ActorRef =
+    system.actorOf(Props(new Door(duration)))
+
+  def start(duration: Long): ActorRef =
+    system.actorOf(Props(new Door(duration.milliseconds)))
+
+  def stop(ref: ActorRef): Unit = system.stop(ref)
+
+  def shutdown(): Unit = system.terminate().map(
+    _ => println("Door-System is terminated!")
+  )
+
+  def pull(ref: ActorRef): Unit = {
+    ref ! Pull()
+  }
+}
+
+class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
+  startWith(Closed, 0)
+
+  when(Closed) {
+    case Event(Pull(), counter) =>
+      goto(Opened) using (counter + 1) forMax duration
+  }
+
+  when(Opened) {
+    case Event(StateTimeout, _) => goto(Closed)
+  }
+
+  onTransition {
+    case Closed -> Opened =>
+      log.info("The door is opened!")
+    case Opened -> Closed =>
+      log.info("The door is closed!")
+  }
+}
+----
+
