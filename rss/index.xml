@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 09:18:44 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 09:24:42 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.<br>
@@ -176,6 +176,19 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { <i
 <td>. Có thể override để FSM bắn ra thêm các sự kiện.</td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tham_kh_o_th_m">Tham khảo thêm</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://kipalog.com/posts/Viet-chuong-trinh-finite-state-machine-voi-Akka">Akka FSM trên Kipalog (Bài viết chính mà mình bắt đầu học)</a></p>
+</li>
+<li>
+<p><a href="http://doc.akka.io/docs/akka/2.5.3/scala/fsm.html">Tài liệu về FSM của Akka</a></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
