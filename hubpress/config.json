@@ -2,17 +2,16 @@
   "meta": {
     "username": "thanhphamvan",
     "repositoryName": "thanhphamvan.github.io",
-    "branch": "master",
-    "cname": "thanhpham.co"
+    "branch": "master"
   },
   "theme": {
     "name": "saga"
   },
   "urls": {
-    "site": "http://thanhpham.co",
+    "site": "https://thanhphamvan.github.io",
     "hubpress": "https://thanhphamvan.github.io",
-    "theme": "//thanhpham.co/themes/saga",
-    "images": "http://thanhpham.co/images"
+    "theme": "https://thanhphamvan.github.io/themes/saga",
+    "images": "https://thanhphamvan.github.io/images"
   },
   "initialisationConfigComponent": {
     "name": "initialise-configuration",
