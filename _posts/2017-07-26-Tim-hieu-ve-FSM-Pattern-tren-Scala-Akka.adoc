@@ -119,3 +119,8 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { //
 <2> . State và StateData mặc định khi Actor được khởi tạo.
 <3> . forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.
 <4> . Có thể override để FSM bắn ra thêm các sự kiện.
+
+==== Tham khảo thêm
+. https://kipalog.com/posts/Viet-chuong-trinh-finite-state-machine-voi-Akka[Akka FSM trên Kipalog (Bài viết chính mà mình bắt đầu học)]
+
+. http://doc.akka.io/docs/akka/2.5.3/scala/fsm.html[Tài liệu về FSM của Akka]
