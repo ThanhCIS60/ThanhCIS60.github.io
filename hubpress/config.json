@@ -9,10 +9,10 @@
     "name": "saga"
   },
   "urls": {
-    "site": "https://thanhphamvan.github.io",
-    "hubpress": "https://thanhphamvan.github.io",
-    "theme": "//thanhphamvan.github.io/themes/saga",
-    "images": "https://thanhphamvan.github.io/images"
+    "site": "http://thanhpham.co",
+    "hubpress": "http://thanhpham.co",
+    "theme": "//thanhpham.co/themes/saga",
+    "images": "http://thanhpham.co/images"
   },
   "initialisationConfigComponent": {
     "name": "initialise-configuration",
