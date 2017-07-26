@@ -4,16 +4,28 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Akka FSM Pattern</title>
-    <meta name="description" content="" />
+    <title>Akka FSM Pattern - Personal blog</title>
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="shortcut icon" href="https://thanhphamvan.github.io/favicon.ico">
+    <meta name="description" content="">
 
-    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/casper/assets/css/screen.css?v=1501058762588" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Akka FSM Pattern">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Akka FSM Pattern">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//thanhphamvan.github.io/themes/uno/assets/css/uno.css?v=1501059019680" />
 
     <link rel="canonical" href="https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html" />
     <meta name="referrer" content="origin" />
@@ -58,34 +70,78 @@
     <meta name="generator" content="HubPress" />
     <link rel="alternate" type="application/rss+xml" title="Personal blog" href="https://thanhphamvan.github.io/rss/" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+
 </head>
-<body class="post-template tag-Scala tag-Akka tag-Pattern tag-FSM nav-closed">
+<body class="post-template tag-Scala tag-Akka tag-Pattern tag-FSM no-js">
 
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " >
+      <div class="panel-main">
     
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="https://thanhphamvan.github.io" title="link to homepage for Personal blog">Personal blog</a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description">My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. </p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="https://thanhphamvan.github.io/#blog" title="link to Personal blog blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
 
-    <div class="site-wrapper">
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
 
-        
+  <article class="post-container post-container--single">
 
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="26 Jul 2017" class="post-meta__date date">26 Jul 2017</time> &#8226; <span class="post-meta__tags tags">on <a href="https://thanhphamvan.github.io/tag/Scala/">Scala</a>, <a href="https://thanhphamvan.github.io/tag/Akka/">Akka</a>, <a href="https://thanhphamvan.github.io/tag/Pattern/">Pattern</a>, <a href="https://thanhphamvan.github.io/tag/FSM/">FSM</a></span>
+        <span class="post-meta__author author"><img src="https://avatars0.githubusercontent.com/u/17200722?v&#x3D;4" alt="profile image for Thanh Pham Van" class="avatar post-meta__avatar" /> by Thanh Pham Van</span>
+      </div>
+      <h1 class="post-title">Akka FSM Pattern</h1>
+    </header>
 
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
-        
-    </nav>
-</header>
-
-<main class="content" role="main">
-    <article class="post tag-Scala tag-Akka tag-Pattern tag-FSM">
-
-        <header class="post-header">
-            <h1 class="post-title">Akka FSM Pattern</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="2017-07-26">26 July 2017</time>  on <a href="https://thanhphamvan.github.io/tag/Scala/">Scala</a>, <a href="https://thanhphamvan.github.io/tag/Akka/">Akka</a>, <a href="https://thanhphamvan.github.io/tag/Pattern/">Pattern</a>, <a href="https://thanhphamvan.github.io/tag/FSM/">FSM</a>
-            </section>
-        </header>
-
-        <section class="post-content">
-            <div class="sect1">
+    <section class="post tag-Scala tag-Akka tag-Pattern tag-FSM">
+      <div class="sect1">
 <h2 id="_fsm_flying_spaghetti_monster">FSM != Flying Spaghetti Monster</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -248,62 +304,21 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
 </div>
 </div>
 </div>
-        </section>
+    </section>
 
-        <footer class="post-footer">
-
-
-            <figure class="author-image">
-                <a class="img" href="https://thanhphamvan.github.io/author/thanhphamvan/" style="background-image: url(https://avatars0.githubusercontent.com/u/17200722?v&#x3D;4)"><span class="hidden">Thanh Pham Van's Picture</span></a>
-            </figure>
-
-            <section class="author">
-                <h4><a href="https://thanhphamvan.github.io/author/thanhphamvan/">Thanh Pham Van</a></h4>
-
-                    <p>Junior Scala-Akka-Play developer. Sophomore student at HUS-VNU.</p>
-                <div class="author-meta">
-                    <span class="author-location icon-location">Hanoi, Vietnam</span>
-                    <span class="author-link icon-link"><a href="https://thanhphamvan.github.io/">https://thanhphamvan.github.io/</a></span>
-                </div>
-            </section>
-
-
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Akka%20FSM%20Pattern&amp;url=https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
-
-        </footer>
-
-
-    </article>
-
-</main>
-
-<aside class="read-next">
-</aside>
+  </article>
 
 
 
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="https://thanhphamvan.github.io">Personal blog</a> &copy; 2017</section>
-            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
-        </footer>
 
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2017. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
     </div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
       <script type="text/javascript">
         jQuery( document ).ready(function() {
@@ -319,8 +334,8 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] {
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1501058762588"></script>
-    <script type="text/javascript" src="//thanhphamvan.github.io/themes/casper/assets/js/index.js?v=1501058762588"></script>
+    <script type="text/javascript" src="//thanhphamvan.github.io/themes/uno/assets/js/main.js?v=1501059019680"></script>
+    
 
 </body>
 </html>
