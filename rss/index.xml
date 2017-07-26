@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>http://thanhpham.co</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 10:07:13 GMT</lastBuildDate><atom:link href="http://thanhpham.co/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 10:45:57 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[An awesome post will be here sooon. Thank you and keep being awesome :D!]]></title><link>https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</guid><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_fsm_flying_spaghetti_monster">FSM != Flying Spaghetti Monster</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.<br>
@@ -16,8 +17,6 @@ Có thể hiểu ý tưởng ngắn gọn về FSM là:<br>
 </div>
 <div class="paragraph">
 <p>Mục tiêu của bài viết là giới thiệu cho người đọc về FSM pattern cũng như một số cái "hay ho" của Scala (ngôn ngữ mình ghét ít thứ nhì sau C#).</p>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_ph_n_t_ch_v_thi_t_k">Phân tích và thiết kế</h3>
@@ -64,6 +63,8 @@ Với trạng thái Mở (Opened), chúng ta sẽ có event StateTimeOut()</p>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_code">Code</h2>
 <div class="sectionbody">
@@ -98,98 +99,14 @@ case class Pull() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>. Tất cả các State đều phải extends từ trait DoorState</td>
+<td>Tất cả các State đều phải extends từ trait DoorState</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>. Event phải được khai bác dưới dạng một case class</td>
+<td>Event phải được khai bác dưới dạng một case class, có thể nhận thêm parameter hoặc chứa các function</td>
 </tr>
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_object_class_door">Object &amp; Class Door</h4>
-<div class="listingblock">
-<div class="title">Door.scala</div>
-<div class="content">
-<pre class="highlight"><code class="language-scala" data-lang="scala">object Door {
-
-  import scala.concurrent.ExecutionContext.Implicits.global
-  import scala.concurrent.duration._
-
-  val system = ActorSystem("door-system")
-
-  def start(duration: FiniteDuration): ActorRef =
-    system.actorOf(Props(new Door(duration)))
-
-  def start(duration: Long): ActorRef =
-    system.actorOf(Props(new Door(duration.milliseconds)))
-
-  def stop(ref: ActorRef): Unit = system.stop(ref)
-
-  def shutdown(): Unit = system.terminate().map(
-    _ =&gt; println("Door-System is terminated!")
-  )
-
-  def pull(ref: ActorRef): Unit = {
-    ref ! Pull()
-  }
-}
-
-class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { <i class="conum" data-value="1"></i><b>(1)</b>
-  startWith(Closed, 0) <i class="conum" data-value="2"></i><b>(2)</b>
-
-  when(Closed) {
-    case Event(Pull(), counter) =&gt;
-      goto(Opened) using (counter + 1) forMax duration <i class="conum" data-value="3"></i><b>(3)</b>
-  }
-
-  when(Opened) {
-    case Event(StateTimeout, _) =&gt; goto(Closed)
-  }
-
-  onTransition {
-    case Closed -&gt; Opened =&gt; <i class="conum" data-value="4"></i><b>(4)</b>
-      log.info("The door is opened!")
-    case Opened -&gt; Closed =&gt;
-      log.info("The door is closed!")
-  }
-}</code></pre>
 </div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>. Akka hạn chế lỗi bằng cách yêu cầu khai báo StateType.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>. State và StateData mặc định khi Actor được khởi tạo.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>. forMax duration sẽ "bắn ra" StateTimeOut khi hết thời gian.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>. Có thể override để FSM bắn ra thêm các sự kiện.</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_tham_kh_o_th_m">Tham khảo thêm</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><a href="https://kipalog.com/posts/Viet-chuong-trinh-finite-state-machine-voi-Akka">Akka FSM trên Kipalog (Bài viết chính mà mình bắt đầu học)</a></p>
-</li>
-<li>
-<p><a href="http://doc.akka.io/docs/akka/2.5.3/scala/fsm.html">Tài liệu về FSM của Akka</a></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>]]></description><link>http://thanhpham.co/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html</link><guid isPermaLink="true">http://thanhpham.co/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html</guid><category><![CDATA[Scala]]></category><category><![CDATA[Akka]]></category><category><![CDATA[Pattern]]></category><category><![CDATA[FSM]]></category><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html</guid><category><![CDATA[Scala]]></category><category><![CDATA[Akka]]></category><category><![CDATA[Pattern]]></category><category><![CDATA[FSM]]></category><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item></channel></rss>
