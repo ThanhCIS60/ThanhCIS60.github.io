@@ -3,7 +3,7 @@
     "username": "thanhphamvan",
     "repositoryName": "thanhphamvan.github.io",
     "branch": "master",
-    "cname": ""
+    "cname": "thanhpham.co"
   },
   "theme": {
     "name": "saga"
@@ -11,7 +11,7 @@
   "urls": {
     "site": "https://thanhphamvan.github.io",
     "hubpress": "https://thanhphamvan.github.io",
-    "theme": "//thanhphamvan.github.io/themes/uno-zen",
+    "theme": "//thanhphamvan.github.io/themes/saga",
     "images": "https://thanhphamvan.github.io/images"
   },
   "initialisationConfigComponent": {
