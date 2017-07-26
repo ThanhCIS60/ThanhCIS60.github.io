@@ -1,0 +1,7 @@
+= Akka FSM Pattern
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+:hp-image: http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg
+// :published_at: 2019-01-31
+:hp-tags: Scala, Akka, Pattern, FSM
+// :hp-alt-title: My English Title
+FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game
