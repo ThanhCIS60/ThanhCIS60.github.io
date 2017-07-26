@@ -6,4 +6,5 @@
 // :hp-alt-title: My English Title
 
 === FSM != Flying Spaghetti Monster
+
 FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game
