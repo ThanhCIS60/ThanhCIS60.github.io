@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. ]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 06:18:22 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[An awesome post will be here sooon. Thank you and keep being awesome :D!]]></title><link>https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</guid><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. ]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 06:26:06 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[An awesome post will be here sooon. Thank you and keep being awesome :D!]]></title><link>https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/An-awesome-post-will-be-here-sooon-Thank-you-and-keep-being-awesome-D.html</guid><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_fsm_flying_spaghetti_monster">FSM != Flying Spaghetti Monster</h3>
 <div class="paragraph">
 <p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.</p>
@@ -30,7 +30,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Liệt kê những trại thái có thể có.</p>
+<p>Liệt kê những trại thái có thể có.<br></p>
 <div class="ulist">
 <ul>
 <li>
@@ -38,29 +38,21 @@
 </li>
 <li>
 <p>Mở (Opened)</p>
+<div class="paragraph">
+<p>Phức tạp hơn, các bạn có thêm trạng thái Giữ lại (Held)</p>
+</div>
 </li>
 </ul>
 </div>
 </li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Phức tạp hơn, các bạn có thêm trạng thái Giữ lại (Held)</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Dữ liệu được truyền giữa các trại thái (StateData)</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Well, với object là một cái cửa thì chúng ta không có nhiều lắm thông tin cần lưu trữ lại.</p>
-</div>
-<div class="paragraph">
-<p>Ví dụ về StateData có thể áp dụng khi mà chúng ta muốn lập trình một cánh cửa có khả năng đưa ra số người trong phòng bằng cách đếm số người ra/vào chẳng hạn. Khi đó StateData sẽ là một số Int tăng giảm tuỳ vào Event.</p>
-</div>
-<div class="paragraph">
-<p>Trong trường hợp này, mình sẽ lấy ví dụ với cách cửa có kèm theo bộ đếm số lần mở cửa. Con số này sẽ chỉ tăng mà không giảm đi.</p>
+<p>Well, với object là một cái cửa thì chúng ta không có nhiều lắm thông tin cần lưu trữ lại.<br>
+Ví dụ về StateData có thể áp dụng khi mà chúng ta muốn lập trình một cánh cửa có khả năng đưa ra số người trong phòng bằng cách đếm số người ra/vào chẳng hạn. Khi đó StateData sẽ là một số Int tăng giảm tuỳ vào Event.<br>
+Trong trường hợp này, mình sẽ lấy ví dụ với cách cửa có kèm theo bộ đếm số lần mở cửa. Con số này sẽ chỉ tăng mà không giảm đi.</p>
 </div>
 </div>]]></description><link>https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/26/Akka-FSM-Pattern.html</guid><category><![CDATA[Scala]]></category><category><![CDATA[Akka]]></category><category><![CDATA[Pattern]]></category><category><![CDATA[FSM]]></category><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 GMT</pubDate></item></channel></rss>
