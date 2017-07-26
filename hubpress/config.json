@@ -6,12 +6,12 @@
     "cname": ""
   },
   "theme": {
-    "name": "uno-zen"
+    "name": "saga"
   },
   "urls": {
     "site": "https://thanhphamvan.github.io",
     "hubpress": "https://thanhphamvan.github.io",
-    "theme": "//thanhphamvan.github.io/themes/uno",
+    "theme": "//thanhphamvan.github.io/themes/uno-zen",
     "images": "https://thanhphamvan.github.io/images"
   },
   "initialisationConfigComponent": {
