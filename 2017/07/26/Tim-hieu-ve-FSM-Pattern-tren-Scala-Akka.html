@@ -11,8 +11,8 @@
     <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="//thanhphamvan.github.io/themes/saga/assets/css/style.css?v=1501060450201" rel="stylesheet" type="text/css">
-    <link href="//thanhphamvan.github.io/themes/saga/assets/css/animate.min.css?v=1501060450201" rel="stylesheet" type="text/css">
+    <link href="//thanhphamvan.github.io/themes/saga/assets/css/style.css?v=1501060724701" rel="stylesheet" type="text/css">
+    <link href="//thanhphamvan.github.io/themes/saga/assets/css/animate.min.css?v=1501060724701" rel="stylesheet" type="text/css">
     <link href="https://thanhphamvan.github.io/favicon.ico" rel="shortcut icon">
     <link rel="canonical" href="https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html" />
     <meta name="referrer" content="origin" />
@@ -22,16 +22,18 @@
     <meta property="og:title" content="Akka FSM Pattern" />
     <meta property="og:description" content="FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game. Có thể hiểu ý tưởng ngắn gọn về FSM là: State(S) ! Event(E) &amp;#8594; State(S&#x27;), Action(A) Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều này dẫn đến trại" />
     <meta property="og:url" content="https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html" />
+    <meta property="og:image" content="https://cdn.tutsplus.com/gamedev/uploads/2013/12/fsm_steering_enemy_brain.png" />
     <meta property="article:published_time" content="2017-07-26T00:00:00.000Z" />
     <meta property="article:tag" content="Scala" />
     <meta property="article:tag" content="Akka" />
     <meta property="article:tag" content="Pattern" />
     <meta property="article:tag" content="FSM" />
     
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Akka FSM Pattern" />
     <meta name="twitter:description" content="FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game. Có thể hiểu ý tưởng ngắn gọn về FSM là: State(S) ! Event(E) &amp;#8594; State(S&#x27;), Action(A) Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều này dẫn đến trại" />
     <meta name="twitter:url" content="https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html" />
+    <meta name="twitter:image:src" content="https://cdn.tutsplus.com/gamedev/uploads/2013/12/fsm_steering_enemy_brain.png" />
     
     <script type="application/ld+json">
 {
@@ -49,6 +51,7 @@
     "headline": "Akka FSM Pattern",
     "url": "https://thanhphamvan.github.io/2017/07/26/Tim-hieu-ve-FSM-Pattern-tren-Scala-Akka.html",
     "datePublished": "2017-07-26T00:00:00.000Z",
+    "image": "https://cdn.tutsplus.com/gamedev/uploads/2013/12/fsm_steering_enemy_brain.png",
     "keywords": "Scala, Akka, Pattern, FSM",
     "description": "FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game. Có thể hiểu ý tưởng ngắn gọn về FSM là: State(S) ! Event(E) &amp;#8594; State(S&#x27;), Action(A) Tức là: Tại trạng thái S, sự kiện E xảy ra. Điều này dẫn đến trại"
 }
@@ -59,7 +62,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
 </head>
 <body class="post-template tag-Scala tag-Akka tag-Pattern tag-FSM">
-    <header id="header" class="animated fadeIn">
+    <header id="header" class="animated fadeIn" style="background-image: url(https://cdn.tutsplus.com/gamedev/uploads/2013/12/fsm_steering_enemy_brain.png)">
     <div class="header-background">
     <section class="blog-content">
         <a id="site-url" class="blog-title" href="https://thanhphamvan.github.io">Personal blog</a>
@@ -294,7 +297,7 @@ class Door(duration: FiniteDuration) extends Actor with FSM[DoorState, Int] { <i
       </script>
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-    <script src="//thanhphamvan.github.io/themes/saga/assets/js/scripts.js?v=1501060450201"></script>
+    <script src="//thanhphamvan.github.io/themes/saga/assets/js/scripts.js?v=1501060724701"></script>
     
 </body>
 </html>
