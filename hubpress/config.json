@@ -6,7 +6,7 @@
     "cname": ""
   },
   "theme": {
-    "name": "casper"
+    "name": "uno"
   },
   "urls": {
     "site": "https://thanhphamvan.github.io",
@@ -29,7 +29,7 @@
     "description": "My name is Thanh Pham. Junior Scala/Akka back-end developer at @ohze. Sophomore student at @hus-vnu. ",
     "logo": "",
     "cover": "",
-    "delay": "120",
+    "delay": "",
     "postsPerPage": "",
     "googleAnalytics": "",
     "disqus": ""
