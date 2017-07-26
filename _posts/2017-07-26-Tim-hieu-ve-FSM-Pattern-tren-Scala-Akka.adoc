@@ -1,6 +1,6 @@
 = Akka FSM Pattern
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
-// :hp-image: http://jessewarden.com/archives/blogentryimages/finitestatemachines/finitestatemachines-logo.jpg
+:hp-image: https://cdn.tutsplus.com/gamedev/uploads/2013/12/fsm_steering_enemy_brain.png
 // :published_at: 2019-01-31
 :hp-tags: Scala, Akka, Pattern, FSM
 :hp-alt-title: Tìm hiểu về FSM Pattern trên Scala Akka
