@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 08:52:12 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div class="sect1">
-<h2 id="_fsm_flying_spaghetti_monster">FSM != Flying Spaghetti Monster</h2>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jul 2017 08:52:51 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>FSM (viết tắt của Finite-state machine) là một pattern phổ biến trong lập trình game.<br>
@@ -17,6 +16,8 @@ Có thể hiểu ý tưởng ngắn gọn về FSM là:<br>
 </div>
 <div class="paragraph">
 <p>Mục tiêu của bài viết là giới thiệu cho người đọc về FSM pattern cũng như một số cái "hay ho" của Scala (ngôn ngữ mình ghét ít thứ nhì sau C#).</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_ph_n_t_ch_v_thi_t_k">Phân tích và thiết kế</h3>
@@ -60,8 +61,6 @@ Với trạng thái Mở (Opened), chúng ta sẽ có event StateTimeOut()</p>
 <p>Chúng ta sẽ có:<br>
 <code>State(Closed) ! Push() &#8594; State(Opened), ++Counter</code><br>
 <code>State(Opened) ! StateTimeOut() &#8594; State(Closed)</code></p>
-</div>
-</div>
 </div>
 </div>
 </div>
