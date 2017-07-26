@@ -68,6 +68,7 @@ case class Pull() // <2>
 ----
 <1> Tất cả các State đều phải extends từ trait DoorState +
 <2> Event phải được khai bác dưới dạng một case class, có thể nhận thêm parameter hoặc chứa các function
+
 ==== Object & Class Door
 [source,scala]
 .Door.scala
