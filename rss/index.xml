@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 27 Jul 2017 12:38:06 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Reactive Kafka - DataStream & EventStream with Akka Kafka]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Personal blog]]></title><description><![CDATA[My name is Thanh Pham. Junior Scala/Akka back-end developer @ohze. Sophomore student @hus-vnu and Technical Evangelist @MicrosoftStudentPartnersVietnam]]></description><link>https://thanhphamvan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 28 Jul 2017 09:54:09 GMT</lastBuildDate><atom:link href="https://thanhphamvan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Scala 2.12.3 released!]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Link: <a href="https://github.com/scala/scala/releases/tag/v2.12.3">Github</a>, <a href="https://www.reddit.com/r/scala/comments/6q11l8/scala_2123_released/">Reddit/r/scala</a></p>
+</div>
+<div class="paragraph">
+<p>Vì trình độ hạn chế của người dịch, không thể tránh được dịch sai, dịch thiếu nghĩa, ngôn từ ngượng gạo. Nhưng để thực hiện mục tiêu "tốt hơn", điều này là cần thiết :'(.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_changes">Changes</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tốc độ của compiler được <a href="https://developer.lightbend.com/blog/2017-06-12-faster-scala-compiler/">cải thiện đáng kể</a> và kể từ bây giờ sẽ tự động <a href="https://scala-ci.typesafe.com/grafana/dashboard/db/scala-benchmark">tính điểm benchmark</a> sau mỗi thay đổi</p>
+</li>
+<li>
+<p>Setting mới: <code>-opt-inline-from</code>. Dùng lệnh <code>scalac -opt-inline-from:help</code> để xem giải thích chi tiết từ nhà phát triển.</p>
+</li>
+<li>
+<p>The presentation compiler has improved support for implicit macros, which should improve the experience with libraries based on Shapeless. It also has better support for code completion for dependently typed methods. (Ví lý do giới hạn về trình độ, mình không "dám" dịch câu này)</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_futher_changes">Futher changes:</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/scala/scala/pull/5978">#5978</a> Tránh gọi các static initializers khi khôi phục các lớp của Java</p>
+</li>
+<li>
+<p><a href="https://github.com/scala/scala/pull/5589">#5589</a> Thêm setting mới <code>-opt-inline-from</code></p>
+</li>
+<li>
+<p><a href="https://github.com/scala/scala/pull/5931">#5931</a> Nâng cấp lên jline 2.14.4</p>
+</li>
+<li>
+<p><a href="https://github.com/scala/scala/pull/5880">#5880</a> Đóng gói scala-parser-combinators mới (1.0.5&#8594;1.0.6)</p>
+</li>
+<li>
+<p><a href="https://github.com/scala/scala/pull/5879">#5879</a> -Xlint:unused -Ywarn-unused is intuitive</p>
+</li>
+<li>
+<p><a href="https://github.com/scala/scala/pull/5848">#5848</a> add per-phase profiling to scalac</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scala_2_12_notes">Scala 2.12 Notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/scala/scala/releases/v2.12.0">Scala 2.12.x Notes</a> đã được cập nhật thêm những thay đổi quan trọng</p>
+</div>
+</div>
+</div>]]></description><link>https://thanhphamvan.github.io/2017/07/28/Scala-2123-released.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/28/Scala-2123-released.html</guid><category><![CDATA[Scala]]></category><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Fri, 28 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Reactive Kafka - DataStream & EventStream with Akka Kafka]]></title><description><![CDATA[<div class="paragraph">
 <p>An awesome post will be here soon :) Thank you!</p>
 </div>]]></description><link>https://thanhphamvan.github.io/2017/07/27/Reactive-Kafka-giao-tiep-giua-cac-microservices-bang-Scala-Akka.html</link><guid isPermaLink="true">https://thanhphamvan.github.io/2017/07/27/Reactive-Kafka-giao-tiep-giua-cac-microservices-bang-Scala-Akka.html</guid><category><![CDATA[Stream]]></category><category><![CDATA[Kafka]]></category><category><![CDATA[Akka]]></category><category><![CDATA[Scala]]></category><dc:creator><![CDATA[Thanh Pham Van]]></dc:creator><pubDate>Thu, 27 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Akka FSM Pattern]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
