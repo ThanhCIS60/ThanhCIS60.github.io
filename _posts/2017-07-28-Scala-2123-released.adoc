@@ -1,0 +1,26 @@
+= Scala 2.12.3 released!
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Scala
+// :hp-alt-title: My English Title
+
+Link: https://github.com/scala/scala/releases/tag/v2.12.3[Github], https://www.reddit.com/r/scala/comments/6q11l8/scala_2123_released/[Reddit/r/scala]
+
+Vì trình độ hạn chế của người dịch, không thể tránh được dịch sai, dịch thiếu nghĩa, ngôn từ ngượng gạo. Nhưng để thực hiện mục tiêu "tốt hơn", điều này là cần thiết :'(.
+
+== Changes
+. Tốc độ của compiler được https://developer.lightbend.com/blog/2017-06-12-faster-scala-compiler/[cải thiện đáng kể] và kể từ bây giờ sẽ tự động https://scala-ci.typesafe.com/grafana/dashboard/db/scala-benchmark[tính điểm benchmark] sau mỗi thay đổi
+. Setting mới: `-opt-inline-from`. Dùng lệnh `scalac -opt-inline-from:help` để xem giải thích chi tiết từ nhà phát triển.
+. The presentation compiler has improved support for implicit macros, which should improve the experience with libraries based on Shapeless. It also has better support for code completion for dependently typed methods. (Ví lý do giới hạn về trình độ, mình không "dám" dịch câu này)
+
+==== Futher changes:
+* https://github.com/scala/scala/pull/5978[#5978] Tránh gọi các static initializers khi khôi phục các lớp của Java
+* https://github.com/scala/scala/pull/5589[#5589] Thêm setting mới `-opt-inline-from`
+* https://github.com/scala/scala/pull/5931[#5931] Nâng cấp lên jline 2.14.4
+* https://github.com/scala/scala/pull/5880[#5880] Đóng gói scala-parser-combinators mới (1.0.5->1.0.6)
+* https://github.com/scala/scala/pull/5879[#5879] -Xlint:unused -Ywarn-unused is intuitive
+* https://github.com/scala/scala/pull/5848[#5848] add per-phase profiling to scalac
+
+== Scala 2.12 Notes
+https://github.com/scala/scala/releases/v2.12.0[Scala 2.12.x Notes] đã được cập nhật thêm những thay đổi quan trọng
