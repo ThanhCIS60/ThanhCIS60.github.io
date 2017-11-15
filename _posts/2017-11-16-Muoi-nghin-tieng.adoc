@@ -1,6 +1,6 @@
 = Mười nghìn tiếng
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
-// :hp-image: /covers/cover.png
+:hp-image: https://lh3.googleusercontent.com/fXvVwogevZYEmM-yqne8Kl4gcjoARVJtUm5jf6fPp3iifX-_gwZYdRFz11-jNkRvxxY=h900
 // :published_at: 2019-01-31
 :hp-tags: Tâm Sự, Blog
 // :hp-alt-title: My English Title
