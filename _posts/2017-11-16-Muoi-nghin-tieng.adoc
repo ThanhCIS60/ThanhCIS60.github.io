@@ -1,0 +1,48 @@
+= Mười nghìn tiếng
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Tâm Sự, Blog
+// :hp-alt-title: My English Title
+
+>Warning: Wall of Text
+
+Tối là thời gian mình hoạt động tốt hơn ban ngày, nhân tiện cũng vừa làm vào cốc cafe nên mình cũng muốn động tay chân một tý nên sẽ chém gió trên này một tẹo, bạn nào không thích dài dòng lắm lời thì nên ignore.
+
+Mình muốn nói về đoạn trích được đăng tải trên Vnexpress 8 năm trước, nhưng đến hôm nay thì mình với biết về nó, đoạn trích trên vốn đăng tải trong quyển sách Outliers của Malcolm Gladwell, tựa Việt là Những Kẻ Xuất Chúng:
+https://kinhdoanh.vnexpress.net/tin-tuc/doanh-nghiep/quy-tac-10-000-gio-cua-cac-vi-nhan-2701620.html
+
+Những con người được nói trong bài viết trên: The Beatles, Paul Allen và Bill Gates, một người cũng tên Bill nữa: Bill Joy.
+
+Trước khi đi vào vấn đề, mình muốn nói qua về quyển sách. Outliers là quyển sách mà Malcolm viết, phân tích đầy đủ về văn hóa xã hội, điều kiện, tài năng và tham vọng của những người được cho là xuất chúng trong thế kỉ trước. Outliers có rất nhiều những quan điểm trái chiều và phản bác, các bạn có thể tìm ra nhiều bài viết tiếng Việt như vậy, và vì mình luôn khuyến khích tư duy phản biện, nên hãy thoải mái đưa ra ý kiến ở phần comment. Nhưng mình thấy rằng Outliers không phải là kiểu sách self-help sẽ đập vào mắt bạn khi bước vào hiệu sách, quyển sách không vẽ ra một màu hồng hay những phương pháp kiểu "tự kỷ ám thị", Malcolm muốn giải thích những yếu tố nội tại lẫn ngoại lai và sự ảnh hưởng của nó lên từng người mà ông đề cập.
+
+Nếu các bạn đã kiên nhẫn đọc đến đây, xin cảm ơn vì đã dành thời gian, cũng xin lỗi vì mình sẽ còn lan man tiếp.
+
+Tại sao mình lại chọn đoạn trích này ?
+
+Những con người trong câu truyện trên đều có 2 điểm chung:
+
+* Họ chỉ có 24 tiếng mỗi ngày, mình cũng có điểm này, và bạn, người đọc bài viết này cũng thế (trừ trường hợp nếu bạn không ở Trái Đất, bạn không có điểm chung này).
+
+* Họ sử dụng thời gian theo cách, mà nếu những người khác nhìn vào, sẽ ngay lập tức cho rằng như vậy "không ổn chút nào".
+
+Mỗi người có cách sử dụng thời gian của riêng mình, quan niệm về thời gian của mỗi người cũng khác nhau. Cho nên không thể nói ai hay ai dở được.
+
+Tất nhiên trong nhiều bài viết phản biện, người ta cho rằng con số 10000 tiếng là không chính xác. Bởi vì luôn có những con người có thiên phú hơn người khác, họ tìm ra cách hiệu quả nhất, rút ngắn con số trên, và ngược lại, có những con người không thật sự hiệu quả và mất nhiều hơn vậy, như vậy, con số 10000 chỉ mang ý nghĩa trung bình.
+
+Nhưng có 2 điều mình tin tưởng rằng, với trường hợp của chúng ta (giả sử rằng các bạn đều có chung mục tiêu):
+
+* Kinh nghiệm và sự tinh thông là thứ có thể đong đếm bằng thời gian.
+
+* Trong lập trình, tiền bạc và mối quan hệ sẽ chả đưa bạn đi đến đâu.
+
+Trong đoạn trích trên, 10000 đơn vị mà Bill Joy đã đạt được khi "thực đến tận 2 hay 3 giờ sáng, xem những bộ phim cũ kỹ và lập trình" và đôi khi "ngủ gục trên bàn phím".
+10000 cũng là lời giải thích cho câu hỏi của mẹ Gates, khi mà bà luôn thắc mắc tại sao con trai mình lại khó khăn trong việc thức dậy vào buổi sáng. (Trường hợp của The Beatles thì mình không dám nói, âm nhạc là thứ phức tạp và tai trâu của mình thì không hiểu)
+
+Năm 1 Đại Học đã cho mình biết mình đang thiếu thứ gì. Và suốt từ đó đến nay, mình luôn giành ra khoảng thời gian 8-10 tiếng mỗi ngày cho việc mà mình coi là quan trọng, tuy vậy mình vẫn dốt và điểm mình vẫn như shiet :)).
+
+Đã đọc đến đây rồi, bạn có thể chia sẻ xem việc gì mà bạn cho là quan trọng và bạn đang giành bao nhiêu thời gian cho nó vậy ?
+
+P.S: Bài viết thể hiện quan điểm cá nhân, mà đã là quan điểm cá nhân kiểu gì cũng sai.
+
+P.SS: Cảm ơn các bạn đã đọc hết :")
