@@ -1,8 +1,0 @@
-= Reactive Kafka - DataStream & EventStream with Akka Kafka
-// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
-:hp-image: https://kafka.apache.org/images/logo.png
-// :published_at: 2019-01-31
-:hp-tags: Stream, Kafka, Akka, Scala
-:hp-alt-title: Reactive Kafka - giao tiếp giữa các microservices bằng Scala Akka
-
-An awesome post will be here soon :) Thank you! 
